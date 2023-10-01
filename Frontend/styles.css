@@ -38,7 +38,8 @@ label {
 
 input[type="text"],
 input[type="email"],
-input[type="tel"] {
+input[type="tel"], 
+input[type="password"]{
     width: 100%;
     padding: 10px;
     margin-bottom: 10px;
@@ -70,6 +71,7 @@ button{
     display:flex;
     justify-content: center;
     align-items: center;
+    margin: 0 auto;
 }
 a{
     display: flex;

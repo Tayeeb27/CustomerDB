@@ -14,5 +14,8 @@ app.post('/', (req, res) => res.status(405).send('Not allowed!'))
 const customerRoutes = require('./routers/customers');
 app.use('/customers', customerRoutes);
 
+const loginRoutes = require('./routers/login');
+app.use('/login', loginRoutes);
+
 
 module.exports = app
