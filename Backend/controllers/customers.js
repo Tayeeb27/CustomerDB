@@ -51,27 +51,6 @@ const show = async (req, res) => {
       res.status(404).send({ error: err.message })
     }
   }
-  const getUserByEmail = async (req, res) => {
-  
-    try {
-      const user = await Customer.getUserByEmail(req.body.Email);
-  
-      if (!user) {
-        return res.status(401).json({ error: 'Authentication failed' });
-      }
-  
-      const passwordMatch = await bcrypt.compare(req.body.Password, user.Password);
-  
-      if (passwordMatch) {
-        res.status(200).json({ message: 'Authentication successful' });
-      } else {
-        res.status(401).json({ error: 'Authentication failed' });
-      }
-    } catch (error) {
-      console.error('Error during login:', error);
-      res.status(500).json({ error: 'Internal server error' });
-    }
-  }
   
   
   module.exports = { index, show, create, update, destroy }
